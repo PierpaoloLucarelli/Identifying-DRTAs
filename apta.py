@@ -3,7 +3,7 @@ from drta import DRTA
 class APTA:
 	def __init__(self, SIGMA, q0):
 		self.A = DRTA(SIGMA,q0)
-		self.R = []
+		self.R = set()
 
 	# S is a set of timed strings
 	def learn(self,S,t_min,t_max):
@@ -17,7 +17,6 @@ class APTA:
 				q = self.A.q0
 
 				# iterate each tuple of timedString
-
 				for t in ts:
 					print("current String:")
 					print(t)
@@ -34,7 +33,14 @@ class APTA:
 						self.A.addNewTransition(q, q_to, t[0], (t_min, t_max))
 					print("New current state:", q_to)
 					q = q_to
-		print(self.A)
+				if(type_ == "accepted"):
+					self.A.F.add(q)
+				else:
+					self.R.add(q)
+		print("accepted states:")
+		print(self.A.F)
+		print("Rejected states:")
+		print(self.R)
 
 
 

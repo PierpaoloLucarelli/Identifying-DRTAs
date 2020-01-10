@@ -7,7 +7,7 @@ class DRTA:
 		self.SIGMA = SIGMA.copy()
 		self.DELTA = []
 		self.q0 = q0
-		self.F = []
+		self.F = set()
 
 
 	def addNewTransition(self, q_from, q_to, symbol, timeguard):

@@ -3,7 +3,7 @@ import csv
 import math
 from apta import APTA
 
-accepeted = []
+accepted = []
 rejected = []
 t_min = math.inf
 t_max = 0
@@ -26,11 +26,11 @@ with open('data/test.csv') as csv_file:
     			SIGMA = int(timedString_[0])
     		newRow.append(timedString_)
     	if(accept=='1'):
-    		accepeted.append(newRow)
+    		accepted.append(newRow)
     	else:
     		rejected.append(newRow)
 S = {}
-S["accepeted"] = accepeted
+S["accepted"] = accepted
 S["rejected"] = rejected
 SIGMA = np.arange(SIGMA)
 

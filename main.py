@@ -36,9 +36,18 @@ SIGMA = np.arange(SIGMA)
 
 apta = APTA(SIGMA, 0)
 apta.learn(S,t_min,t_max)
-
+print(apta)
+apta.split(apta.A.DELTA[0], 200, S)
+print(apta)
 
 ################## QUESTIONS ##################
 
 # 1) What do you pickas the starting state
 # 2) Do we assume that each symbol causes a change in state? Can it not be that an symbol makes the state stay in same place?
+# 3) Are all the time guards at the end of the construction of the timed APTA supposed to be (t_min, t_max?
+
+# 4) Do we basically have to split every transition that has different t values and same q,q' where one string is accepted and one is rejected?
+
+################## NEXT STEPS ##################
+
+# Split transitions according to Algorithm 4.2

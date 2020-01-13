@@ -21,6 +21,20 @@ class DRTA:
 				return transition
 		return None
 
+
+	def removeTransition(self,transition):
+		removeIndex = -1
+		for i in range(len(self.DELTA)):
+			t = self.DELTA[i]
+			if(transition.equal(t)):
+				removeIndex = i
+		if(removeIndex >= 0):
+			print("removing item at index", removeIndex)
+			del self.DELTA[removeIndex]
+		else:
+			print("Transition not found!")
+
+
 	def __str__(self):
 		output = "DELTA: \n" 
 		for i in range(len(self.DELTA)):

@@ -19,6 +19,8 @@ class Transition:
 			return False
 		return True
 
+	
+
 
 	def __str__(self):
 		output = "from: " + str(self.q_from) + ", to: " + str(self.q_to) + ", symbol: " + str(self.symbol) + ", timeguard: (" + str(self.timeguard[0]) + ", " + str(self.timeguard[1]) + ")\n"
